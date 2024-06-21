@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+
+.cover-container {
+  position: relative;
+  overflow: hidden; /* Hide overflowing content */
+  width: 100%;
+  height: 500px;
+ 
+}
+
+.cover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/home2.jpg");/* Replace 'your-image.jpg' with your image path */
+  background-size: cover;
+  z-index: -1; /* Place the image behind other content */
+  background-attachment: fixed;
+}
+
+.content {
+ 
+
+
+  position: absolute;
+  top: 55%;
+  left: 80px; /* Adjust left position for text */
+  transform: translateY(-50%);
+  width: 450px; /* Adjust width of text area */
+  height: 300px; /* Adjust height of text area */
+  padding: 20px;
+  
+  color: black;
+}
+.content h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.content button{color:white;
+background-color: #1B4965;
+border:1px solid #1B4965;
+cursor: pointer;
+padding: 10px 20px;
+font-size: 16px;
+border-radius: 20px; }
+.content button a {
+  text-decoration: none; 
+  color: inherit;}
+.content button:hover{background-color: #1B4965;}
+.content button a:hover{color:black}
+.container1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left:30px;
+  padding-right:30px;
+ 
+
+ 
+}
+
+.image {
+  flex: 1;
+  margin-right: 20px;
+ margin-left: 30px;
+}
+
+.image img {
+  max-width: 95%;
+  height: auto;
+  display: block;
+}
+
+.aboutus {
+  flex: 1;
+}
+.aboutus p{text-align: left;}
+
+.buttons {
+  display: flex;
+  align-items: center;
+ padding-left: 0px;
+ 
+  margin-top:20px;
+  display: flex;
+  gap: 10px; 
+
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1B4965; /* Example button background color */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+
+  border:1px solid #1B4965;
+
+  
+}
+.buttons button:hover{background-color: #1B4965;}
+.buttons button a {
+  text-decoration: none; 
+  color: inherit;}
+  .buttons button a:hover{background-color: #1B4965;
+  color: black;}
+
+.aboutus h1{
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+.aboutus p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.services{background-color: #eeeeee;    display: flex;
+  flex-wrap: wrap;
+}
+
+.services h1{font-size: 40px;
+margin-left: 80px;
+margin-bottom: 50px;
+width: 100%;
+margin-top: 40px;
+}
+.boxcountainer{display: flex;
+  justify-content: space-between;}
+
+.box {
+  text-align: center;
+  width: calc(30% - 20px); /* Adjust box width and spacing as needed */
+  padding: 20px 30px;
+  }
+.box p {text-align:left;}
+
+    
+
+.box img {
+  width: 100px; /* Adjust image size as needed */
+  height: auto;
+  margin-bottom: 10px;
+  margin-left: 10px;
+ 
+}
+
+.box h3{ margin-top: 10px;
+margin-left: 5px;}
+
+.specialities {display:flex;}
+
+.left-div {
+  flex: 1;
+  position: relative;
+}
+
+.left-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire div */
+}
+.right-div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.box1 {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+.box1 i{  font-size: 35px;}
+
+.box1 h3 {
+  margin: 5px 0;/* Adjust space between icon and title */
+}
+.box1 p{text-align: center;
+  }
+
+
+.stethoscope-icon {
+  color: #3a7Cbf; /* Change the color to blue */
+}
+.box1:hover {
+  background-color: #3a7Cbf;
+  color: white; /* Change color on hover */
+}
+
+.box1:hover i {
+  color: white; /* Change icon color on hover */
+}

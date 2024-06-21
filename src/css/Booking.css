@@ -1,0 +1,300 @@
+.doctor-list {
+    max-width: 800px; 
+    margin: 0 auto; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.doctor-box {
+    width: 200px; 
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    color: #333; 
+    transition: background-color 0.3s; 
+}
+.doctor-box:hover {
+    background-color: #f2f2f2; /* Light gray background on hover */
+}
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.infob h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #007bff; 
+}
+.infob p {
+    margin: 5px 0;
+    color: #666; 
+    
+}
+.rating {
+    color: #ffcc00; 
+    font-weight: bold;
+}
+.containerb {
+    overflow: hidden; /* Clearfix */
+    float: left;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+.sectionda {
+    float: left;
+   margin-top: -85px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top:0px;
+    width: 32%;
+    position:relative;
+   
+     
+}
+.profiled h2,
+.profiled p,
+.profiled img,
+.profiled.rating {
+    display: block;
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+
+
+
+
+
+.profiled, .access-infob {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px; 
+    
+    width:100%;
+}
+.profiled{
+    text-align: center;
+    align-items: center; 
+    display: flex; 
+    flex-direction: column;
+    
+    padding-top: 0px;
+    
+    
+}
+
+.access-infob p{text-align: left;
+padding-left: 5px;}
+.access-infob h2{padding-bottom:10px;}
+
+.profiled img {
+    margin-bottom: 10px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.profiled h2, .access-infob h2 {
+    margin: 5px 0;
+}
+.profiled p, .access-infob p {
+    margin: 5px 0;
+}
+
+.rating {
+    font-size: 24px;
+    color: gold;
+}
+.star {
+    margin: 0 2px;
+}
+.appointment-section {   
+    padding-top: 0px;
+    padding-bottom: 65px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 10px;
+    width:800px;
+    height:max-content;
+    position: relative;
+    margin-left: 30px;
+    padding-left: 0px;
+    text-align: center;
+   
+
+    
+    }
+    .navigation-bar {
+        background-color: #f2f2f2;
+        padding-top: 10px;
+        padding-right: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding-left: 10px;
+        margin-left:0px;
+        width: 100%; 
+        text-align: left;
+        padding-bottom: 10px;
+       
+       
+      
+    }
+    
+    .navigation-bar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 20px;
+       
+    }
+    
+    .navigation-bar li {
+        display: inline;
+        margin-right: 20px;
+    }
+    
+    .navigation-bar li:last-child {
+        margin-right: 0;
+    }
+    
+    .navigation-bar a {
+        text-decoration: none;
+        color: #333;
+        padding: 5px;
+        border-bottom: 2px solid transparent;
+    }
+    
+    .navigation-bar a.active {
+        border-bottom: 2px solid #007bff;
+        position: relative;
+    }
+    
+    .navigation-bar a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #007bff;
+    }
+    
+    .navigation-bar a:hover {
+        color: #007bff;
+    }
+.part {
+    width: 80%;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.details {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+}
+.part2{
+    border: none;
+    border-radius: 10px;
+   background-color: #fff;
+    width: 50%;
+    height: max-content;
+    margin-left: auto; /* Center horizontally */
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.part2 h1{text-align: center;
+margin-top: 10px;
+margin-bottom: 35px;
+font-size: 25px;}
+
+.map-button, .book-now-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.map-button:hover, .book-now-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+.availability {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.available,
+.not-available {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.available {
+    background-color: green;
+}
+
+.not-available {
+    background-color: red;
+}
+.part3{position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);}
+
+.prev {
+  padding: 10px 15px;
+margin-left: 0px;
+}
+.next{padding: 10px 15px;
+margin-right:0px ;}
+
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+.title h2 {
+    margin: 0 0 10px 0;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+  .react-calendar__tile.fully-booked {
+    background-color: red;
+    color: white;
+}

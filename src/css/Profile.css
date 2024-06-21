@@ -1,0 +1,158 @@
+.doctor-list {
+    max-width: 800px; 
+    margin: 0 auto; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.doctor-box {
+    width: 200px; 
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    color: #333; 
+    transition: background-color 0.3s; 
+}
+.doctor-box:hover {
+    background-color: #f2f2f2; /* Light gray background on hover */
+}
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #007bff; 
+}
+.info p {
+    margin: 5px 0;
+    color: #666; 
+}
+.rating {
+    color: #ffcc00; 
+    font-weight: bold;
+}
+.container {
+    overflow: hidden; /* Clearfix */
+    float: left;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+.sectionp {
+    float: left;
+   margin-top: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top:0px;
+    width: 40%;
+   
+     
+}
+.profile h2,
+.profile p,
+.profile img,
+.profile.rating {
+    display: block;
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+
+
+
+
+
+.profile, .access-info {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px; 
+    width:100%;
+}
+.profile{
+    text-align: center;
+    align-items: center; 
+    display: flex; 
+    flex-direction: column;
+    margin-top: 10px;
+    padding-top: 10px;
+    
+    
+}
+
+.profile img {
+    margin-bottom: 10px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.profile h2, .access-info h2 {
+    margin: 5px 0;
+}
+.profile p, .access-info p {
+    margin: 5px 0;
+}
+
+.rating {
+    font-size: 24px;
+    color: gold;
+}
+.star {
+    margin: 0 2px;
+}
+.access-info h2{margin-bottom: 10px;}
+.access-info p,.access-info h2{text-align: left;}
+.sectionp2 {
+    
+   
+    margin-top: -33px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+   
+   
+    width:70%;
+    height: max-content;
+    margin-left: 20px;
+    
+    
+}
+.space{height: 83px;}
+.description {
+   
+    padding-bottom: 20px;
+    
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.description h2{margin-bottom: 30px;}
+.question, .answer {
+    display: inline-block;
+    text-align: left;
+     padding-left: 20px;
+     
+ }
+ .question{
+     font-weight: bold;
+     text-align: left;
+     margin-right: 20px;
+     padding-right: 20px;
+     
+ }
+ .question p,.answer p{text-align: left;}
+ 
+ 
+ 
+ .details .details p {
+     margin-bottom: 10px;
+     padding-right: 20px;
+     padding-left: 20px;
+     
+ }

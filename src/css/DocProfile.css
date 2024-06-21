@@ -1,0 +1,260 @@
+.doctor-list {
+    max-width: 800px; 
+    margin: 0 auto; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.doctor-box {
+    width: 200px; 
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    color: #333; 
+    transition: background-color 0.3s; 
+}
+.doctor-box:hover {
+    background-color: #f2f2f2; /* Light gray background on hover */
+}
+.profile-picd img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.infod h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #007bff; 
+}
+.infod p {
+    margin: 5px 0;
+    color: #666; 
+    
+}
+.rating {
+    color: #ffcc00; 
+    font-weight: bold;
+}
+.containerd {
+    overflow: hidden; /* Clearfix */
+    float: left;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+.sectiond {
+    float: left;
+   margin-top: -210px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top:0px;
+    width: 32%;
+    position:relative;
+   
+     
+}
+.profiled h2,
+.profiled p,
+.profiled img,
+.profiled.rating {
+    display: block;
+    margin: 20px 0; /* Add some margin for spacing */
+}
+
+
+
+
+
+
+.profiled, .access-infod {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px; 
+    
+    width:100%;
+}
+.profiled{
+    text-align: center;
+    align-items: center; 
+    display: flex; 
+    flex-direction: column;
+    
+    padding-top: 0px;
+    
+    
+}
+
+.access-infod p{text-align: left;
+padding-left: 5px;}
+.access-infod h2{padding-bottom:10px;}
+
+.profiled img {
+    margin-bottom: 10px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.profiled h2, .access-infod h2 {
+    margin: 5px 0;
+}
+.profiled p, .access-infod p {
+    margin: 5px 0;
+}
+
+.rating {
+    font-size: 24px;
+    color: gold;
+}
+.star {
+    margin: 0 2px;
+}
+
+
+.sectiondinfod {
+    
+    padding-top: 0px;
+   
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-left: 20px;
+    width: max-content;
+    margin-right:10px;
+    
+}
+
+.navigation-barp {
+    background-color: #f2f2f2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 30px;
+    width: 100%; 
+    padding-right: 0px;
+    
+    
+    
+  
+}
+
+.navigation-barp ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-barp li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navigation-barp li:last-child {
+    margin-right: 0;
+}
+
+.navigation-barp a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.navigation-barp a.active {
+    border-bottom: 2px solid #007bff;
+    position: relative;
+}
+
+.navigation-barp a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #007bff;
+}
+
+.navigation-barp a:hover {
+    color: #007bff;
+}
+
+
+.descriptiond {
+   
+    padding-bottom: 20px;
+    text-align: left;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.descriptiond p{text-align: left;}
+
+ .questiond, .answerd {
+   display: inline-block;
+    margin-right: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.answerd p{text-align: left;}
+.questiond{
+    font-weight: bold;
+}
+
+
+.detailsd .detaild h3 {
+    margin-top: 0;
+}
+
+.detailsd .detaild p {
+    margin-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.schedule {
+    margin-top: 20px;
+    background-color: #b8dce2;
+    padding: 15px;
+    border: solid 1px #ccc;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    margin-bottom: 0;
+    
+}
+
+.hours p {
+    border: solid 1px #807d7d;
+    border-radius: 30%;
+}
+
+.days, .hours {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+   
+}
+.days p{text-align: left;}
+
+.days p, .hours p {
+    margin-bottom: 30px;
+    padding: 6px;
+}
+
+.schedule .days p:last-child, .schedule .hours p:last-child {
+    margin-bottom: 20px;
+}
