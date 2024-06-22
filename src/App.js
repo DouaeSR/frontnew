@@ -1,3 +1,4 @@
+import './App.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/home';
 import Error from './pages/Error';
@@ -18,7 +19,9 @@ import DocList from './pages/Patients/Doctors/DocList'
 function App() {
   return (
     <BrowserRouter>
+       <div className="app-container">
         <Header />
+        <div className="thecontent">
             <Routes>
               <Route path="/" element={<Home />}/>
               <Route path="/home" element={<Home />}/>
@@ -36,7 +39,9 @@ function App() {
               <Route path="/doctor/login" element={<DoctorLogIn/>}/>
               <Route path="*" element={<Error />}/>
             </Routes>
+            </div>   
         <Footer />
+        </div>
       </BrowserRouter>
     
    

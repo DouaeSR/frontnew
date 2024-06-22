@@ -45,29 +45,28 @@ import axios from "axios";
         const handleDateChange = (newDate) => {
           setDate(newDate);
         };
-        
-        const handleBookAppointment = async () => {
-          const token = JSON.parse(sessionStorage.getItem('info')).token;
-          const utcDate = date.toISOString();
-  
-          try {
-              const response = await axios.post(
-                  'http://localhost:4000/api/appointments/addAppointment',
-                  {
-                      date: utcDate,
-                      IdDoctor: params.id,
-                      IdPatient,
-                  },
-                  {
-                    headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}`}
-                  }
-              );
-              console.log(response);
+
+        const handleBookAppointment = () => {
+          console.log(JSON.parse(sessionStorage.getItem('info')).token)
+          try{
+            const response = axios.post('http://localhost:4000/api/appointments/addAppointment',{
+            date:date,
+            IdDoctor:params.id,
+            IdPatient
+            },{headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}` }},)
+            if (response.status === 201) {
               alert(`Appointment booked for ${date.toDateString()}`);
+            } else {
+              alert("Can't book an appointment today");
+            }
           } catch (error) {
-              console.error('Error booking appointment', error);
+            console.error(error);
+            alert("Can't book an appointment today");
           }
-      };
+        };
+          
+        
+        
         
       
   return (
