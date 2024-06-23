@@ -14,6 +14,10 @@ import Footer from './components/Footer';
 import DocProfile from './pages/Patients/Doctors/DocProfile';
 import Booking from './pages/Patients/Doctors/Booking';
 import DocList from './pages/Patients/Doctors/DocList'
+import DoctorAppointments from './pages/Doctors/Appointments';
+// import HistoryAppointments from './pages/Doctors/HistoryAppointments';
+import ProfileDoc from './pages/Doctors/ProfileDoc';
+import PatProfile from './pages/Doctors/PatProfile';
 
 
 function App() {
@@ -28,7 +32,7 @@ function App() {
               <Route path="/patient/appointments" element={<PatientAppointments />}/>
               <Route path="/patient/profile" element={<PatientProfile />}/>
               <Route path="/patient/newapp" element={<PatientNewAppointment />}/>
-              <Route path="/patient/docprofile" element={<DocProfile />}/>
+              <Route path="/patient/docprofile/:id" element={<DocProfile />}/>
               
               <Route path="/patient/booking/:id" element={<Booking/>}/> 
               <Route path="/patient/doclist" element={<DocList/>}/> 
@@ -37,6 +41,10 @@ function App() {
               <Route path="/doctor/signup" element={<DoctorSignUp/>}/>
               <Route path="/login" element={<LogIn />}/>
               <Route path="/doctor/login" element={<DoctorLogIn/>}/>
+              <Route path="/doctor/appointments" element={<DoctorAppointments/>}/>
+              {/* <Route path="/doctor/historyappointments" element={<HistoryAppointments/>}/> */}
+              <Route path="/doctor/profiledoc" element={<ProfileDoc/>}/>
+              <Route path="/doctor/patprofile" element={<PatProfile/>}/>
               <Route path="*" element={<Error />}/>
             </Routes>
             </div>   

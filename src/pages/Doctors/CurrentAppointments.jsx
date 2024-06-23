@@ -2,7 +2,7 @@ import '../../css/CurrentAppointments.css';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-function CurrentAppointments() {
+function CurrentAppointments({apt}) {
     return (
         <section className="maincountainer">
             <div className="title">
@@ -14,21 +14,12 @@ function CurrentAppointments() {
 
 
             <div className="currentappointments">
-                <div className="appointment">
-                    <p>kaoutar</p>
-                    <p>24/08/2024</p>
-                    <p>20:00 AM</p>
-                    <p>Done</p>
-                </div>
-
-                <div className="appointment">
-                    <p>kaoutar</p>
-                    <p>24/08/2024</p>
-                    <p>20:00 AM</p>
-                    <p>Done</p>
-                </div>
-                
-            </div>
+            <div className="info">Dr. Smith</div>
+            <div className="info">Cardiologist</div>
+            <div className="info">{new Date(apt.date).toLocaleDateString("fr")}</div>
+            <div className="info">10:00 AM</div>
+            <button className="cancel-button">Cancel</button>
+        </div>         
         </section>
     );
 }

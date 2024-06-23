@@ -46,22 +46,30 @@ import axios from "axios";
           setDate(newDate);
         };
 
-        const handleBookAppointment = () => {
-          console.log(JSON.parse(sessionStorage.getItem('info')).token)
-          try{
-            const response = axios.post('http://localhost:4000/api/appointments/addAppointment',{
-            date:date,
-            IdDoctor:params.id,
-            IdPatient
-            },{headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}` }},)
+        const handleBookAppointment = async () => {
+          // const formattedDate = date.toISOString().replace(/-/g, '\/').replace(/T.+/, '');
+        
+          try {
+            const response = await axios.post('http://localhost:4000/api/appointments/addAppointment', {
+              date: date,
+              IdDoctor: params.id,
+              IdPatient
+            }, {
+              headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}` }
+            });
+      
             if (response.status === 201) {
               alert(`Appointment booked for ${date.toDateString()}`);
             } else {
               alert("Can't book an appointment today");
             }
           } catch (error) {
-            console.error(error);
-            alert("Can't book an appointment today");
+            if (error.response && error.response.data && error.response.data.message) {
+              alert(error.response.data.message);
+            } else {
+              console.error(error);
+              alert("Can't book an appointment today");
+            }
           }
         };
           
@@ -93,8 +101,8 @@ import axios from "axios";
         <section className="appointment-section">
           <nav className="navigation-bar">
             <ul>
-              <li><Link to="/patient/booking">Booking</Link></li>
-              <li><Link to="/patient/docprofile">Profile</Link></li>
+              <li><Link to={`/patient/booking/${params.id}`}>Booking</Link></li>
+              <li><Link to={`/patient/docprofile/${params.id}`}>Profile</Link></li>
             </ul>
           </nav>
           <div className="part part2">

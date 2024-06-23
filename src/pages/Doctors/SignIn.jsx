@@ -12,12 +12,12 @@ function SignIn() {
 
     e.preventDefault();
     axios.post('http://localhost:4000/api/doctors/login',{email,password})
-    // .then((result) => {
-    //   if(result.status===200){          
-    //     sessionStorage.setItem('info', JSON.stringify(result.data));
-    //     window.location.href = "/patient/appointments";
-    //   }
-    // })
+    .then((result) => {
+      if(result.status===200){          
+        sessionStorage.setItem('info', JSON.stringify(result.data));
+        window.location.href = "/doctor/appointments";
+      }
+    })
    
 
 };

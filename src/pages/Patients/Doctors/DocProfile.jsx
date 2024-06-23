@@ -2,13 +2,42 @@ import React from 'react';
 import '../../../css/DocProfile.css';
 import Profilepic from'../../../images/téléchargement.png';
 import { Link } from 'react-router-dom';
-// import { useState, useEffect } from "react";
-// import { getDoctors } from "../../services/doctors";
-// import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
+import { getInfo } from "../../../services/global";
+import axios from "axios";
 
 
 
 function DoctorProfile( ) {
+  const [singleData, setSingleData] = useState({}); 
+      
+      const params = useParams()
+      
+      
+
+      const getDoctorData = async () => {
+        const response = await axios.get(`http://localhost:4000/api/patients/getsingledoctor/${params.id}`);
+        if (response.data && response.status === 200) {
+          return response.data;
+        
+        }
+
+      };
+
+      useEffect(() => {
+        if (!getInfo() || getInfo().Type !== "Patient") {
+          window.location.href = "/login";
+        }
+
+        const getData = async () => {
+          const data = await getDoctorData();
+          //  console.log(data);
+            setSingleData(data);
+        };
+    
+        getData();
+      },[]);
   
   return (
    
@@ -18,24 +47,24 @@ function DoctorProfile( ) {
         <div className="sectiond">
           <div className="profiled">
             <img src={Profilepic} alt="Doctor" />
-            <h2>Dr. John Doe</h2>
-            <p>Speciality: Cardiologist</p>
+            <h2>{singleData.firstName}</h2>
+            <p>{singleData.specialization}</p>
            
             <p>Points: 1000</p>
           </div>
 
           <div className="access-infod">
             <h2>Contact Information</h2>
-            <p>Phone: +1234567890</p>
-            <p>Email: doctor@example.com</p>
-            <p>Address: 123 Main Street, City</p>
+            <p>Phone: {singleData.phone}</p>
+            <p>Email: {singleData.email}</p>
+            <p>Address: {singleData.adress}</p>
           </div>
         </div>
         <div className="sectiondinfod">
           <nav className="navigation-barp">
             <ul>
-              <li><Link to="/patient/booking">Booking</Link></li>
-              <li><Link to="/patient/docprofile">Profile</Link></li>
+            <li><Link to={`/patient/booking/${params.id}`}>Booking</Link></li>
+              <li><Link to={`/patient/docprofile/${params.id}`}>Profile</Link></li>
             </ul>
           </nav>
 
@@ -65,7 +94,7 @@ function DoctorProfile( ) {
               <p>Wednesday</p>
               <p>Thursday</p>
               <p>Friday</p>
-              <button className="availability-button">Check Availability</button>
+              
             </div>
             <div className="hours">
               <p>9 AM - 5 PM</p>
