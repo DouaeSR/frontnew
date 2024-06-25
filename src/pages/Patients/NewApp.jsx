@@ -1,4 +1,4 @@
-import Aside from "../../components/aside";
+import Layout from "../../components/Layout";
 import '../../css/NewApp.css';
 import { useState } from "react";
 import axios from 'axios';
@@ -28,8 +28,9 @@ function NewApp() {
 
 
     return (
-      <main>
-        <Aside />
+      <Layout>
+        <main>
+        
         <div className="NewApp-container">
  
     <div className="doctor-search-container">
@@ -61,6 +62,8 @@ function NewApp() {
     </div>
     </div>
   </main>
+      </Layout>
+      
    );
   }
 

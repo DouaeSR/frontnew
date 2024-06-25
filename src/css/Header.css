@@ -1,0 +1,72 @@
+.user-menu-trigger {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-right: 8px;
+  }
+  
+  .user-name {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-name svg {
+    margin-left: 8px;
+  }
+  
+  .user-menu {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 250px;
+    z-index: 1000;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .user-menu .navbar-brand {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .user-menu p {
+    margin: 5px 0;
+    color: #333;
+  }
+  
+  .user-menu .nav-link {
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #007bff;
+    display: block;
+    width: 100%;
+  }
+  
+  .user-menu .nav-link:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .user-menu hr {
+    margin: 10px 0;
+    border-top: 1px solid #eee;
+  }

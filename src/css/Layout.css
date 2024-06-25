@@ -1,0 +1,26 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  flex: 0 0 auto;
+}
+
+.main-content-layout {
+  display: flex;
+  flex: 1;
+}
+
+.aside {
+  flex: 0 0 250px; /* Adjust the width of the sidebar as needed */
+  background-color: #f8f9fa; /* Example background color for the sidebar */
+  padding: 20px; /* Optional padding */
+}
+
+.body-content-layout {
+  flex: 1;
+  padding: 20px; /* Optional padding */
+  overflow-y: auto;
+}

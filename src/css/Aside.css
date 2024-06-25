@@ -30,7 +30,11 @@
     font-weight: bold;
     color: black;
   }
-  
+
+  .points {
+    color: black;
+  }
+ 
   .sidebar-menuaside {
     list-style-type: none;
     padding: 0;
@@ -50,10 +54,7 @@
   
   }
   
-  .sidebar-menuaside li a:hover {
-    background-color: #5598a5;
-    
-  }
+  
   .sidebaraside p {
     margin-top: 330px;
     font-size:1px ;

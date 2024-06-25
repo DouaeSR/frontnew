@@ -1,10 +1,7 @@
-import React from 'react';
-import '../../css/ProfileDoc.css';
-import Profilepic from'../../images/téléchargement.png';
-
-
-
-
+import React from "react";
+import "../../css/ProfileDoc.css";
+import Profilepic from "../../images/téléchargement.png";
+import Layout from "../../components/Layout";
 
 function ProfileDoc() {
   return (
@@ -33,10 +30,12 @@ function ProfileDoc() {
           </div>
         </div>
         <div className="sectiondinfodoc">
-      
           <div className="descriptiondoc">
             <h2>Doctor Description</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet sem et est consectetur, a sodales ex dignissim.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              imperdiet sem et est consectetur, a sodales ex dignissim.
+            </p>
           </div>
           <div className="detailsdoc">
             <div className="questiondoc">
@@ -48,7 +47,6 @@ function ProfileDoc() {
               <p>therapist</p>
               <p>Harvard univercity</p>
               <p>10 years +</p>
-
             </div>
           </div>
           <div className="schedule">
@@ -67,7 +65,6 @@ function ProfileDoc() {
               <p>9 AM - 5 PM</p>
               <p>9 AM - 5 PM</p>
             </div>
-
           </div>
         </div>
       </div>

@@ -18,6 +18,7 @@ import DoctorAppointments from './pages/Doctors/Appointments';
 // import HistoryAppointments from './pages/Doctors/HistoryAppointments';
 import ProfileDoc from './pages/Doctors/ProfileDoc';
 import PatProfile from './pages/Doctors/PatProfile';
+import PatientsList from './pages/Doctors/PatientsList';
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
               <Route path="/login" element={<LogIn />}/>
               <Route path="/doctor/login" element={<DoctorLogIn/>}/>
               <Route path="/doctor/appointments" element={<DoctorAppointments/>}/>
-              {/* <Route path="/doctor/historyappointments" element={<HistoryAppointments/>}/> */}
+              <Route path='/doctor/patientslist' element={<PatientsList/>}/>
               <Route path="/doctor/profiledoc" element={<ProfileDoc/>}/>
               <Route path="/doctor/patprofile" element={<PatProfile/>}/>
               <Route path="*" element={<Error />}/>

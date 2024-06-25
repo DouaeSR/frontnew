@@ -14,13 +14,13 @@ function Profile() {
             <div className="profile">
               <img src={Image} alt="Doctor" />
               <h2>John</h2>
-              <div className="rating">
+              {/* <div className="rating">
                 <span className="star">&#9733;</span>
                 <span className="star">&#9733;</span>
                 <span className="star">&#9733;</span>
                 <span className="star">&#9733;</span>
                 <span className="star">&#9734;</span>
-              </div>
+              </div> */}
               <p>Points: 1000</p>
             </div>
 
