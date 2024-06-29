@@ -5,7 +5,7 @@
     margin: auto;
     
     padding: 10px;
-    margin-left: 270px;
+    margin-left: auto;
     margin-right: 20px;
     margin-top: auto;
     
@@ -40,11 +40,11 @@
   }
   
   .search-button {
-    padding: 10px ;
+    padding: 9px ;
     font-size: 16px;
     height: 40px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #356c8c;
     color: white;
     border: none;
     border-top-right-radius: 4px;
@@ -57,7 +57,7 @@
   }
   
   .explore-link {
-    color: #007bff;
+    color: #356c8c;
     text-decoration: none;
     transition: color 0.3s ease;
   }

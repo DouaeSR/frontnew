@@ -3,18 +3,19 @@ import { useState, useEffect } from "react";
 import CurrentApp from "../../components/Patients/CurrentApp";
 import HistoryApp from "../../components/Patients/HistoryApp";
 import { useLocation } from "react-router-dom";
-
+import '../../css/Appointments.css'
 import { getInfo } from "../../services/global";
 import { getApointmentsPatient } from "../../services/appointment";
 import Layout from "../../components/Layout";
 
-function Appointment() {
-  const toDay = new Date().toJSON().slice(0, 10);
+function Appointment() { 
+  const toDay = new Date().toJSON().slice(0, 10); 
   let location = useLocation();
   const [page, setPage] = useState("Current Appointment");
   const [appointementsData, setAppointementsData] = useState([]);
-
-  useEffect(() => {
+ 
+  useEffect(() => { 
+    
     if (!getInfo() || getInfo().Type !== "Patient") {
       window.location.href = "/login";
     }
@@ -30,7 +31,7 @@ function Appointment() {
   }, [location]);
 
   return (
-    getInfo() && (
+    getInfo().Type=='Patient' && (
       <Layout>
         <main>
           {page === "Current Appointment" && (

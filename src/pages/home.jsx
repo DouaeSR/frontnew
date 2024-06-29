@@ -13,7 +13,7 @@ function Home() {
           <div className="content">
               <h1>Better health at your fingertips</h1>
               <p>With this website you get your own online booking system where patients can schedule appointments 24/7 with certified doctors.</p>
-              <button className="btn"><Link to="/patient/signup">Make an appointment</Link></button>
+              <button className="btn"><Link to="/patient/newapp">Make an appointment</Link></button>
           </div>
       </div>
 
@@ -27,7 +27,7 @@ function Home() {
               <p>Dats in an online doctor appointment booking website where the patients can book appointments with doctors. The patients can book appointments anytime, anywhere with their desired doctors according to their problems.</p>
               <p>After creating an account, the user can book a slot or they can even cancel an appointment. The user can be a patient or doctor, and both can receive emails from each other.</p>
               <div className="buttons">
-                  <button><Link to="/patient/signup">Make an appointment</Link></button>
+                  <button><Link to="/patient/newapp">Make an appointment</Link></button>
                   <button><Link to="/login">Contact us</Link></button>
               </div>
           </div>

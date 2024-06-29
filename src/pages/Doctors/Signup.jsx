@@ -12,7 +12,7 @@ function SignUp() {
     // const [licenseNumber, setLicenseNumber] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+ 
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:4000/api/doctors/signup', {
@@ -25,9 +25,16 @@ function SignUp() {
             email,
             password
         })
-        .then(result => console.log(result))
-        // .catch(error => console.error(error));
-    };
+        .then(result => {
+            if(result.status===200){          
+              sessionStorage.setItem('info', JSON.stringify(result.data));
+              window.location.href = "/doctor/appointments";
+            }
+          })
+          .catch(error => {
+              console.error('There was an error!', error);
+          });
+      };
 
     return (
       <main>

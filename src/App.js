@@ -15,10 +15,19 @@ import DocProfile from './pages/Patients/Doctors/DocProfile';
 import Booking from './pages/Patients/Doctors/Booking';
 import DocList from './pages/Patients/Doctors/DocList'
 import DoctorAppointments from './pages/Doctors/Appointments';
-// import HistoryAppointments from './pages/Doctors/HistoryAppointments';
 import ProfileDoc from './pages/Doctors/ProfileDoc';
 import PatProfile from './pages/Doctors/PatProfile';
 import PatientsList from './pages/Doctors/PatientsList';
+import ContactUs from './pages/ContactUs';
+import AdminDashboard from './pages/Admin/AdminDashboard';
+import Messages from './pages/Admin/Messages';
+import UsersList from './pages/Admin/UsersList';
+import Response from './pages/Admin/Response';
+import AdminLogIn from './pages/Admin/SignIn';
+import PatHome from './pages/Patients/home';
+import DocDashboard from './pages/Doctors/dashboard';
+import ListDoctors from './pages/Admin/DoctorsList';
+import NewDoctors from './pages/Admin/NewDoctors';
 
 
 function App() {
@@ -34,7 +43,7 @@ function App() {
               <Route path="/patient/profile" element={<PatientProfile />}/>
               <Route path="/patient/newapp" element={<PatientNewAppointment />}/>
               <Route path="/patient/docprofile/:id" element={<DocProfile />}/>
-              
+              <Route path='/patient/home' element={<PatHome/>}/>
               <Route path="/patient/booking/:id" element={<Booking/>}/> 
               <Route path="/patient/doclist" element={<DocList/>}/> 
               
@@ -42,10 +51,19 @@ function App() {
               <Route path="/doctor/signup" element={<DoctorSignUp/>}/>
               <Route path="/login" element={<LogIn />}/>
               <Route path="/doctor/login" element={<DoctorLogIn/>}/>
+              <Route path="/doctor/dashboard" element={<DocDashboard/>}/>
               <Route path="/doctor/appointments" element={<DoctorAppointments/>}/>
               <Route path='/doctor/patientslist' element={<PatientsList/>}/>
               <Route path="/doctor/profiledoc" element={<ProfileDoc/>}/>
-              <Route path="/doctor/patprofile" element={<PatProfile/>}/>
+              <Route path="/doctor/patientprofile/:id" element={<PatProfile/>}/>
+              <Route path='/contactus' element={<ContactUs/>}/>
+              <Route path="/admin/login" element={<AdminLogIn/>}/>
+              <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
+              <Route path='/admin/messages' element={<Messages/>}/>
+              <Route path='/admin/response' element={<Response/>}/>
+              <Route path='/admin/patientslist' element={<UsersList/>}/>
+              <Route path='/admin/doctorslist' element={<ListDoctors/>}/>
+              <Route path='/admin/newdoctors' element={<NewDoctors/>}/>
               <Route path="*" element={<Error />}/>
             </Routes>
             </div>   

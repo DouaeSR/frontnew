@@ -1,0 +1,47 @@
+.overviewdash {
+    width:90%;
+     margin-left:auto ;
+     margin-right: auto;
+    
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     margin-top:40px;
+   
+   
+ }
+ 
+ .admdashbox {
+     width: 25%; /* Adjust width as needed */
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     text-align: center;
+     display: flex; /* Use flexbox */
+     align-items: center;
+     margin-bottom: 35px;
+     height: fit-content; /* Adjust height as needed */
+    padding-left: 4%;
+     align-content:center;
+     text-decoration: none;
+      color: black;
+ }
+ 
+ 
+ 
+ .text {
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .text p {
+     margin: 5px 0;
+     margin-left: 30px;
+ }
+ .welcomeadmin h3{text-align: center;
+ padding: 20px;
+ margin-bottom: 15px;}
+ 
+ .welcomeadmin p{text-align: center;
+ }
+ .welcomeadmin{align-self: center;}

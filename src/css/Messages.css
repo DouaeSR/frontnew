@@ -1,47 +1,50 @@
-.patients-list-container {
+.Messages-container {
     background-color: #fff;
-    /* padding: 20px; */
+    padding: 20px;
     border:none;
     margin-left:auto;
-    width:80%;
+    width:100%;
     margin-bottom: 20px;
     margin-top: 10px;
     margin-right: auto;
+   
+    
 }
 
-
-.patients-list-container h2 {
+.Messages-container h2 {
     text-align: center;
     margin-bottom: 30px;
+   
 }
 
-.patientstable  {
+.Messagestable {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.patientstable  th, .patientstable td {
+.Messagestable th, .Messagestable td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
-.patientstable th {
+.Messagestable th {
     background-color: #f2f2f2;
 }
 
-.Detailsbutton button {
+.Buttons button {
     padding: 8px 12px;
     background-color: #5598a5;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 
-
-.Detailsbutton button:hover {
+.Buttons button:hover {
     background-color: #5598a5;
 }
+
+

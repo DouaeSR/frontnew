@@ -1,7 +1,7 @@
 .layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 120vh;
 }
 
 .header {
@@ -16,7 +16,7 @@
 .aside {
   flex: 0 0 250px; /* Adjust the width of the sidebar as needed */
   background-color: #f8f9fa; /* Example background color for the sidebar */
-  padding: 20px; /* Optional padding */
+  padding: 20px; 
 }
 
 .body-content-layout {

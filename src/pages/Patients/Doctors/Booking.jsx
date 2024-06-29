@@ -78,24 +78,22 @@ import axios from "axios";
         
       
   return (
-    getInfo()  && (
+    getInfo().Type="Patient"  && (
     <main>
       
       <div className="containerb">
         <div className="sectionda">
           <div className="profiled">
             <img src={Image} alt="Doctor" />
-            <h2>{singleData.firstName}</h2>
-            <p>{singleData.specialization}</p>
-           
-            <p>Points: 1000</p>
+            <h3>{singleData.firstName}</h3>
+            <p>{singleData.specialization}</p> 
           </div>
 
           <div className="access-infob">
-            <h2>Contact Information</h2>
-            <p>Phone: +1234567890</p>
-            <p>Email: {singleData.email}</p>
-            <p>Address: 123 Main Street, City</p>
+            <h3>Contact Information</h3>
+            <p>Phone : {singleData.phone}</p>
+            <p>Email : {singleData.email}</p>
+            <p>Address : {singleData.adress}</p>
           </div>
         </div>
         <section className="appointment-section">

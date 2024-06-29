@@ -1,203 +1,170 @@
-.doctor-list {
-    max-width: 800px; 
-    margin: 0 auto; 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.editbutton {
+  width: 100%;
 }
-.doctor-box {
-    width: 200px; 
-    margin: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    color: #333; 
-    transition: background-color 0.3s; 
+
+.editbutton button {
+  width: 100%;
+  border-radius: 5px;
+  border-color: #807d7d;
 }
-.doctor-box:hover {
-    background-color: #f2f2f2; /* Light gray background on hover */
-}
-.profile-picdoc img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-.infodoc h2 {
-    margin: 0;
-    font-size: 18px;
-    color: #007bff; 
-}
-.infodoc p {
-    margin: 5px 0;
-    color: #666; 
-    
-}
-.rating {
-    color: #ffcc00; 
-    font-weight: bold;
-}
+
 .containerdoc {
-    overflow: hidden; /* Clearfix */
-    float: left;
-    display: flex;
-    flex-direction:row;
-    align-items: center;
+  overflow: hidden; /* Clearfix */
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .sectiondoc {
-    float: left;
-   margin-top: -155px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top:0px;
-    width: 32%;
-    position:relative;
-       
+  float: left;
+  margin-top: -189px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 0px;
+  width: 32%;
+  position: relative;
 }
-.profiledoc h2,
+.profiledoc h3,
 .profiledoc p,
 .profiledoc img,
 .profiledoc.rating {
-    display: block;
-    margin: 20px 0; /* Add some margin for spacing */
+  display: block;
+  margin: 20px 0; /* Add some margin for spacing */
 }
 
+.profiledoc,
+.access-infodoc {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 
-
-
-
-
-.profiledoc, .access-infodoc {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px; 
-    
-    width:100%;
+  width: 100%;
 }
-.profiledoc{
-    text-align: center;
-    align-items: center; 
-    display: flex; 
-    flex-direction: column;
-    
-    padding-top: 0px;
-    
-    
+.profiledoc {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 0px;
 }
 
-.access-infodoc p{text-align: left;
-padding-left: 5px;}
-.access-infodoc h2{padding-bottom:10px;}
+.access-infodoc p {
+  text-align: left;
+  padding-left: 5px;
+}
+.access-infodoc h3 {
+  padding-bottom: 10px;
+}
 
 .profiledoc img {
-    margin-bottom: 10px;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
-.profiledoc h2, .access-infodoc h2 {
-    margin: 5px 0;
+.profiledoc h3,
+.access-infodoc h3 {
+  margin: 5px 0;
 }
-.profiledoc p, .access-infodoc p {
-    margin: 5px 0;
+.profiledoc p,
+.access-infodoc p {
+  margin: 5px 0;
 }
-
-.rating {
-    font-size: 24px;
-    color: gold;
-}
-.star {
-    margin: 0 2px;
-}
-
 
 .sectiondinfodoc {
-    
-    padding-top: 0px;
-   
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin-top: 8px;
-    margin-left: 20px;
-    width: max-content;
-    margin-right:10px;
-    margin-bottom: 20px;
-    
+  padding-top: 0px;
+  width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
-
 
 .descriptiondoc {
-   
-    padding-bottom: 20px;
-    text-align: left;
-    padding-right: 20px;
-    padding-left: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+  padding-right: 20px;
+  padding-left: 20px;
 }
-.descriptiondoc p{text-align: left;}
-
- .questiondoc, .answerdoc {
-   display: inline-block;
-    margin-right: 20px;
-    padding-right: 20px;
-    padding-left: 20px;
+.descriptiondoc h3 {
+  margin-top: 15px;
 }
-.answerdoc p{text-align: left;}
-.questiondoc{
-    font-weight: bold;
+.descriptiondoc p {
+  text-align: left;
 }
 
+.questiondoc,
+.answerdoc {
+  display: inline-block;
+  margin-right: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.answerdoc p {
+  text-align: left;
+}
+.questiondoc {
+  font-weight: bold;
+}
 
 .detailsdoc .detaildoc h3 {
-    margin-top: 0;
+  margin-top: 0px;
 }
 
 .detailsdoc .detaildoc p {
-    margin-bottom: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+  margin-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .schedule {
-    margin-top: 20px;
-    background-color: #b8dce2;
-    padding: 15px;
-    border: solid 1px #ccc;
-    padding-right: 20px;
-    padding-left: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    
-    margin-bottom: 0;
-    
+  margin-top: 20px;
+  background-color: #b8dce2;
+  padding: 15px;
+  border: solid 1px #ccc;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  margin-bottom: 0;
 }
 
-.schedule h3{margin-bottom: 10px;}
+.schedule h3 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
 .hours p {
-    border: solid 1px #807d7d;
-    border-radius: 30%;
+  border: solid 1px #807d7d;
+  border-radius: 30%;
 }
 
-.days, .hours {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 20px;
-   
+.days,
+.hours {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
 }
-.days p{text-align: left;}
+.days p {
+  text-align: left;
+}
 
-.days p, .hours p {
-    margin-bottom: 30px;
-    padding: 6px;
-}jn
-
-.schedule .days p:last-child, .schedule .hours p:last-child {
-    margin-bottom: 20px;
+.days p,
+.hours p {
+  margin-bottom: 30px;
+  padding: 6px;
+}
+jn .schedule .days p:last-child,
+.schedule .hours p:last-child {
+  margin-bottom: 20px;
 }

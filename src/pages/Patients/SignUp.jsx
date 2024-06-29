@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import '../../css/SignUp.css'
 import { useState } from "react";
@@ -14,11 +13,22 @@ function SignUp() {
     const  [email, setEmail] =useState ('')
     const  [password, setPassword] =useState ('')
 
+    
+ 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/api/patients/signup',{firstname,lastname,birthday,gender,email,password})
-        .then(result=> console.log(result))
-
+        axios.post('http://localhost:4000/api/patients/signup', {
+            firstname, lastname, birthday, gender, email, password
+        })
+        .then(result => {
+          if(result.status===200){          
+            sessionStorage.setItem('info', JSON.stringify(result.data));
+            window.location.href = "/patient/appointments";
+          }
+        })
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
     };
 
     return (

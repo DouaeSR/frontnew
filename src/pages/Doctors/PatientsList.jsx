@@ -2,9 +2,29 @@ import React from "react";
 import "../../css/PatientsList.css";
 import Layout from "../../components/Layout";
 import { Link } from "react-router-dom";
+import { getInfo } from "../../services/global";
+import { useState,useEffect } from "react";
+import { getDoctorPatients } from "../../services/patients";
 
 function PatientsList() {
+  const [patients, setPatients] = useState([]);
+  useEffect(() => {
+    if (!getInfo() || getInfo().Type !== "Doctor") {
+      window.location.href = "/doctor/login";
+    }
+    const fetchPatients = async () => {
+      try {
+        const data = await getDoctorPatients();
+        setPatients(data);
+      } catch (error) {
+        console.error('Error fetching patients:', error);
+      }
+    };
+
+    fetchPatients();
+  }, []);
   return (
+    getInfo().Type="Doctor" && (
     <Layout>
       {" "}
       <div className="patients-list-container">
@@ -12,7 +32,6 @@ function PatientsList() {
         <table className="patientstable">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
@@ -21,25 +40,24 @@ function PatientsList() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>John Doe</td>
-              <td>john.doe@example.com</td>
-              <td>123-456-7890</td>
-              <td>123 Street,City,Country</td>
-              <td>
-                <div className="Detailsbutton">
-                 
-                    <button><Link to="/doctor/patprofile">View Details</Link></button>
-                  
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       
-      </div>
-    </Layout>
+              {patients.map((patient) => (
+                <tr key={patient._id}>
+                  <td>{patient.firstName} {patient.lastName}</td>
+                  <td>{patient.email}</td>
+                  <td>{patient.phone}</td>
+                  <td>{patient.address}</td>
+                  <td>
+                    <div className="Detailsbutton">
+                    <Link to={`/doctor/patientprofile/${patient._id}`}> <button>View Details</button></Link>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Layout>
+    )
   );
 }
 

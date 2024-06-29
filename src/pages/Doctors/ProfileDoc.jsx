@@ -1,41 +1,50 @@
 import React from "react";
 import "../../css/ProfileDoc.css";
 import Profilepic from "../../images/téléchargement.png";
-import Layout from "../../components/Layout";
+import { getInfo } from "../../services/global";
+import {useState, useEffect } from "react";
+import { getDoctorData } from "../../services/doctors";
 
 function ProfileDoc() {
+  const [doctorData, setDoctorData] = useState([]);
+  useEffect(() => {
+    if (!getInfo() || getInfo().Type !== "Doctor") {
+      window.location.href = "/doctor/login";
+    }
+    const getData = async () => {
+      const data = await getDoctorData();
+      console.log(data);
+      setDoctorData(data);
+    };
+    getData()
+  },[])
   return (
+    getInfo().Type="Doctor" && (
     <main>
       <div className="containerdoc">
         <div className="sectiondoc">
           <div className="profiledoc">
-            <img src={Profilepic} alt="Doctor" />
-            <h2>Dr. John Doe</h2>
-            <p>Speciality: Cardiologist</p>
-            <div className="rating">
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9733;</span>
-              <span className="star">&#9734;</span>
-            </div>
-            <p>Points: 1000</p>
+            <img src={Profilepic} alt="Doctor" /> 
+            <h3>Dr. {doctorData.firstName}</h3>
+           
           </div>
 
           <div className="access-infodoc">
-            <h2>Contact Information</h2>
-            <p>Phone: +1234567890</p>
-            <p>Email: doctor@example.com</p>
-            <p>Address: 123 Main Street, City</p>
+            <h3>Contact Information</h3>
+            <p>Phone: {doctorData.phone}</p>
+            <p>Email: {doctorData.email}</p>
+            <p>Address: {doctorData.address}</p>
           </div>
+          <div className="editbutton">
+           <button>Edit profile</button> 
+
+          </div>
+
+
         </div>
         <div className="sectiondinfodoc">
           <div className="descriptiondoc">
-            <h2>Doctor Description</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              imperdiet sem et est consectetur, a sodales ex dignissim.
-            </p>
+            <h3>Doctor Description</h3>
           </div>
           <div className="detailsdoc">
             <div className="questiondoc">
@@ -44,9 +53,9 @@ function ProfileDoc() {
               <p>Experience</p>
             </div>
             <div className="answerdoc">
-              <p>therapist</p>
-              <p>Harvard univercity</p>
-              <p>10 years +</p>
+              <p>{doctorData.specialization}</p>
+              <p>{doctorData.education}</p>
+              <p>{doctorData.experience}</p>
             </div>
           </div>
           <div className="schedule">
@@ -69,6 +78,7 @@ function ProfileDoc() {
         </div>
       </div>
     </main>
+    )
   );
 }
 

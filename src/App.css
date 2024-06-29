@@ -14,9 +14,13 @@ html, body, #root {
   }
   
   .footercontainer {
-    background-color: #3f51b5;
+    background-color:	#98bad5;
     text-align: center;
     color: white;
     
    
   }
+.col-lg-8 {
+ color: black;
+  }
+ 

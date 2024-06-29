@@ -1,47 +1,46 @@
-.patients-list-container {
+.users-list-container {
     background-color: #fff;
-    /* padding: 20px; */
+    padding: 20px;
+    padding-top: 0;
     border:none;
     margin-left:auto;
-    width:80%;
+    width:100%;
     margin-bottom: 20px;
     margin-top: 10px;
     margin-right: auto;
 }
 
-
-.patients-list-container h2 {
+.users-list-container h2 {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.patientstable  {
+.Userstable  {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.patientstable  th, .patientstable td {
+.Userstable  th, .Userstable td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
-.patientstable th {
+.Userstable th {
     background-color: #f2f2f2;
 }
 
-.Detailsbutton button {
+.Actionbutton button {
     padding: 8px 12px;
     background-color: #5598a5;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 
-
-.Detailsbutton button:hover {
+.Actionbutton button:hover {
     background-color: #5598a5;
 }

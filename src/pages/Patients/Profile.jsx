@@ -1,65 +1,87 @@
-import '../../css/Profile.css';
-import Image from'../../images/téléchargement.png';
-
-
-
+import "../../css/Profile.css";
+import Image from "../../images/téléchargement.png";
+import { getInfo } from "../../services/global";
+import { useState,useEffect } from "react";
+import { getPatientData } from "../../services/patients";
 
 function Profile() {
+  const [patientData, setPatientData] = useState([]);
+  useEffect(() => {
+    if (!getInfo() || getInfo().Type !== "Patient") {
+      window.location.href = "/login";
+    }
+
+    const getData = async () => {
+      const data = await getPatientData();
+      console.log(data);
+      setPatientData(data);
+    };
+    getData();
+  },[]) 
+ 
+  const calculateAge = (birthday) => {
+    const birthDate = new Date(birthday);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    return age;
+  };
+
+ 
   return (
-    <div>
-      
-      <main>
-        <div className="container">
-          <div className="sectionp">
-            <div className="profile">
-              <img src={Image} alt="Doctor" />
-              <h2>John</h2>
-              {/* <div className="rating">
-                <span className="star">&#9733;</span>
-                <span className="star">&#9733;</span>
-                <span className="star">&#9733;</span>
-                <span className="star">&#9733;</span>
-                <span className="star">&#9734;</span>
-              </div> */}
-              <p>Points: 1000</p>
-            </div>
-
-            <div className="access-info">
-              <h2>Contact Information</h2>
-              <p>Phone: +1234567890</p>
-              <p>Email: doctor@example.com</p>
-            </div>
+    getInfo().Type="Patient"  && (
+    <main>
+      <div className="containersections">
+        <div className="sectionpat">
+          <div className="profile">
+            <img src={Image} alt="Doctor" />
+            <h3>{patientData.firstName}</h3>
           </div>
-          <div className="sectionp2">
-            <div className="description">
-              <h2>Patient Informations</h2>
-            </div>
 
-            <div className="details">
-              <div className="question">
-                <p>First name</p>
-                <p>Last name</p>
-                <p>Age</p>
-                <p>Gender</p>
-                <p>Cin</p>
-                <p>Blood type</p>
-                <p>Allergies</p>
-              </div>
-              <div className="answer">
-                <p>John</p>
-                <p>Smith</p>
-                <p>38</p>
-                <p>Male</p>
-                <p>L235798</p>
-                <p>O+</p>
-                <p>Dust,Avocado</p>
-              </div>
-              <div className="space"></div>
-            </div>
+          <div className="access-info">
+            <h3>Contact Information</h3>
+            <p>Phone: {patientData.phone}</p>
+            <p>Email: {patientData.email}</p>
+          </div>
+          <div className="editbutton">
+            <button>Edit profile</button>
           </div>
         </div>
-      </main>
-    </div>
+        <div className="sectionp2">
+          <div className="description">
+            <h3>Patient Informations</h3>
+          </div>
+
+          <div className="details">
+            <div className="question">
+              <p>First name</p>
+              <p>Last name</p>
+              <p>Age</p>
+              <p>Gender</p>
+              <p>Cin</p>
+              <p>Blood type</p>
+              <p>Allergies</p>
+            </div>
+            <div className="answer">
+            <p>{patientData.firstName}</p>
+              <p>{patientData.lastName}</p>
+              <p>{calculateAge(patientData.birthday)}</p>
+              <p>{patientData.gender}</p>
+              <p>Cin</p>
+              <p>{patientData.bloodType}</p>
+              <p>{patientData.allergies}</p>
+            </div>
+            <div className="space"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    )
   );
 }
 

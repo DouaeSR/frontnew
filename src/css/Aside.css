@@ -1,62 +1,112 @@
 .sidebaraside {
-    background-color:white;
-    width: 250px;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    float: left; 
-    overflow: auto;
-    border-right: #999;
-    border-right-style: solid;
-    border-width: 1px;
-  
-  }
-  
-  .profileaside {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    margin-top: 10px;
-  }
-  
-  .profile-picaside {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .username {
-    font-weight: bold;
-    color: black;
-  }
+  background-color: white;
+  width: 250px;
+  height: 100%;
+  /* padding: 20px; */
+  box-sizing: border-box;
+  float: left; 
+  overflow: auto;
+  border-right: #999;
+  border-right-style: solid;
+  border-width: 1px;
+}
 
-  .points {
-    color: black;
-  }
- 
-  .sidebar-menuaside {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+.profileaside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
-  .sidebar-menuaside li {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    
-  }
-  
-  .sidebar-menuaside li a {
-    text-decoration: none;
-    color: black;
-    padding:10px 0;
-  
-  }
-  
-  
-  .sidebaraside p {
-    margin-top: 330px;
-    font-size:1px ;
-  }
-  
+  padding-top: 30px;
+  background-image: url('../images/backgroud1.png');
+}
+
+.profile-picaside {
+  width: 80px; /* Increased size */
+  height: 80px; /* Increased size */
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-infoaside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 5px;
+}
+
+
+
+.profile-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.profile-button-1  {
+  flex: 1;
+  padding: 5px 25px;
+  text-align: center;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  background-color: white;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.profile-button-2  {
+  flex: 1;
+  padding: 5px 5px;
+  text-align: center;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  background-color: white;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.sidebar-menuaside {
+  list-style-type: none;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin: 0;
+}
+
+.sidebar-menuaside li {
+  margin-bottom: 10px;
+}
+
+.sidebar-menuaside li a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.sidebar-menuaside li a i {
+  margin-right: 10px; /* Added space between icons and link titles */
+}
+
+.sidebaraside p {
+  margin-top: 330px;
+  font-size: 1px;
+
+}
+.admin-avatar {
+  width: 60px; /* Increased size */
+  height: 60px; /* Increased size */
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background-color: #356c8c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}

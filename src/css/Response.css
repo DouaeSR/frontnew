@@ -1,0 +1,58 @@
+.response-container {
+    background-color: #fff;
+    padding: 20px;
+    border:none;
+    margin-left:auto;
+    width:80%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-right: auto;
+    height: 100vh;
+}
+
+.message-details {
+    margin-bottom: 20px;
+}
+
+.message-details h3 {
+    margin-bottom: 10px;
+}
+
+.message-details p {
+    margin: 5px 0;
+}
+
+.response-form h3 {
+    margin-bottom: 10px;
+}
+
+.response-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.response-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.response-form button {
+    background-color: #5598a5;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.response-form button:hover {
+    background-color: #5598a5;
+}

@@ -1,0 +1,61 @@
+.message-container {
+    background-color: #fff;
+    padding: 20px;
+    border:none;
+    margin-left:auto;
+    width:80%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-right: auto;
+text-align: center;}
+
+
+
+.msg-details {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.message-container h4 {
+    margin-bottom: 10px;
+}
+
+.msg-details p {
+    margin: 5px 0;
+  
+}
+
+.message-form h3 {
+    margin-bottom: 10px;
+}
+
+.message-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.message-form button {
+    background-color: #356c8c;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.message-form button:hover {
+    background-color: #5598a5;
+}
