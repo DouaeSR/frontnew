@@ -256,3 +256,8 @@ margin-right:0px ;}
 .spacer {
     flex-grow: 1;
   }
+  .unavailable-date {
+    background-color: red;
+    color: white;
+    pointer-events: none;
+  }

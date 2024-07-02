@@ -26,7 +26,7 @@ const UsersList = () => {
   return (getInfo().Type = "Admin" && (
     <Layout>
       <div className="users-list-container">
-        <h2>Patients List</h2>
+        <h2>Doctors List</h2>
         <table className="Userstable">
           <thead>
             <tr>

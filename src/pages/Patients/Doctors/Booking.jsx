@@ -12,7 +12,6 @@ import axios from "axios";
 
     function Booking() {
       const [singleData, setSingleData] = useState({}); 
-      
       const params = useParams()
       const IdPatient = getInfo()?.user._id;
       
@@ -47,8 +46,7 @@ import axios from "axios";
         };
 
         const handleBookAppointment = async () => {
-          // const formattedDate = date.toISOString().replace(/-/g, '\/').replace(/T.+/, '');
-        
+
           try {
             const response = await axios.post('http://localhost:4000/api/appointments/addAppointment', {
               date: date,
@@ -72,10 +70,8 @@ import axios from "axios";
             }
           }
         };
+
           
-        
-        
-        
       
   return (
     getInfo().Type="Patient"  && (
@@ -109,6 +105,9 @@ import axios from "axios";
             <Calendar 
               onChange={handleDateChange} 
               value={date} 
+              minDate={new Date()}
+              // tileDisabled={({ date, view }) => view === 'month' && isDateUnavailable(date)}
+              // tileClassName={({ date, view }) => view === 'month' && isDateUnavailable(date) ? 'unavailable-date' : null}
             />
             </div>
             <div className="availability">
