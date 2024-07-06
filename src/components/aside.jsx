@@ -34,8 +34,8 @@ const Aside = () => {
            
             <ul className="sidebar-menuaside">
               <li>
-                <NavLink to="/doctor/profiledoc">
-                  <i className="fa-regular fa-user"></i> Home
+                <NavLink to="/doctor/dashboard">
+                  <i className="fa-regular fa-user"></i> Dashboard
                 </NavLink>
               </li>
               <li>
@@ -113,7 +113,7 @@ const Aside = () => {
             <ul className="sidebar-menuaside">
               <li>
                 <NavLink to="/patient/home">
-                  <i className="fa-regular fa-user"></i> Home
+                  <i className="fa-regular fa-user"></i> Dashboard
                 </NavLink>
               </li>
               <li>

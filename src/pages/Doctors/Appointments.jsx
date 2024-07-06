@@ -6,9 +6,9 @@ import { useLocation } from "react-router-dom";
 import Layout from "../../components/Layout";
 import { getInfo } from "../../services/global";
 import { getApointmentsDoctor } from "../../services/appointment";
-
-
-function Appointment() {
+ 
+ 
+function Appointment() { 
   const toDay = new Date().toJSON().slice(0, 10);
   let location = useLocation();
   const [page, setPage] = useState("Current Appointment");
@@ -28,7 +28,8 @@ function Appointment() {
     getData();
     setPage(location.state ? location.state.page : "Current Appointment");
   }, [location]);
-
+  const handleCancel = (appointmentId) => {
+    setAppointementsData(appointementsData.filter(apt => apt._id !== appointmentId));}
   return (
     getInfo().Type="Doctor" && (
       <Layout>
@@ -40,7 +41,7 @@ function Appointment() {
               {appointementsData.map(
                 (apt) =>
                   apt.date.slice(0, 10) >= toDay && (
-                    <CurrentApp key={apt._id} apt={apt} />
+                    <CurrentApp key={apt._id} apt={apt} onCancel={handleCancel} />
                   )
               )}
             </section>

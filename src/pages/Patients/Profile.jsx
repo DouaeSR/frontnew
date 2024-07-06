@@ -3,9 +3,11 @@ import Image from "../../images/téléchargement.png";
 import { getInfo } from "../../services/global";
 import { useState,useEffect } from "react";
 import { getPatientData } from "../../services/patients";
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
   const [patientData, setPatientData] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     if (!getInfo() || getInfo().Type !== "Patient") {
       window.location.href = "/login";
@@ -49,7 +51,7 @@ function Profile() {
             <p>Email: {patientData.email}</p>
           </div>
           <div className="editbutton">
-            <button>Edit profile</button>
+            <button onClick={() => navigate('/patient/editprofile')}>Edit profile</button>
           </div>
         </div>
         <div className="sectionp2">

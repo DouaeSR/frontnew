@@ -13,6 +13,7 @@ import axios from "axios";
     function Booking() {
       const [singleData, setSingleData] = useState({}); 
       const params = useParams()
+      const [appointmentCounts, setAppointmentCounts] = useState({});
       const IdPatient = getInfo()?.user._id;
       
 
@@ -24,6 +25,16 @@ import axios from "axios";
         }
 
       };
+      // const getAppointmentCounts = async () => {
+      //   const response = await axios.get(`http://localhost:4000/api/appointments/getAppointmentsCountByDate/${params.id}`);
+      //   if (response.data && response.status === 200) {
+      //     const counts = response.data.reduce((acc, { _id, count }) => {
+      //       acc[_id] = count;
+      //       return acc;
+      //     }, {});
+      //     setAppointmentCounts(counts);
+      //   }
+      // };
 
       useEffect(() => {
         if (!getInfo() || getInfo().Type !== "Patient") {
@@ -32,8 +43,8 @@ import axios from "axios";
 
         const getData = async () => {
           const data = await getDoctorData();
-          //  console.log(data);
-            setSingleData(data);
+          setSingleData(data);
+          // await getAppointmentCounts();
         };
     
         getData();
@@ -70,7 +81,10 @@ import axios from "axios";
             }
           }
         };
-
+        // const tileDisabled = ({ date }) => {
+        //   const dateString = date.toISOString().split('T')[0];
+        //   return appointmentCounts[dateString] >= 4;
+        // };
           
       
   return (
@@ -106,8 +120,7 @@ import axios from "axios";
               onChange={handleDateChange} 
               value={date} 
               minDate={new Date()}
-              // tileDisabled={({ date, view }) => view === 'month' && isDateUnavailable(date)}
-              // tileClassName={({ date, view }) => view === 'month' && isDateUnavailable(date) ? 'unavailable-date' : null}
+              // tileDisabled={tileDisabled}
             />
             </div>
             <div className="availability">

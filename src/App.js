@@ -4,6 +4,7 @@ import Home from './pages/home';
 import Error from './pages/Error';
 import PatientAppointments from './pages/Patients/Appointment';
 import PatientProfile from './pages/Patients/Profile';
+import EditProfilePat from './pages/Patients/EditProfile';
 import PatientNewAppointment from './pages/Patients/NewApp';
 import PatientSignUp from './pages/Patients/SignUp';
 import DoctorSignUp from './pages/Doctors/Signup'
@@ -28,6 +29,7 @@ import PatHome from './pages/Patients/home';
 import DocDashboard from './pages/Doctors/dashboard';
 import ListDoctors from './pages/Admin/DoctorsList';
 import NewDoctors from './pages/Admin/NewDoctors';
+import SearchResults from './pages/Patients/Results';
 
 
 function App() {
@@ -41,7 +43,9 @@ function App() {
               <Route path="/home" element={<Home />}/>
               <Route path="/patient/appointments" element={<PatientAppointments />}/>
               <Route path="/patient/profile" element={<PatientProfile />}/>
+              <Route path="/patient/editprofile" element={<EditProfilePat />}/>
               <Route path="/patient/newapp" element={<PatientNewAppointment />}/>
+              <Route path="/patient/results" element={<SearchResults/>}/>
               <Route path="/patient/docprofile/:id" element={<DocProfile />}/>
               <Route path='/patient/home' element={<PatHome/>}/>
               <Route path="/patient/booking/:id" element={<Booking/>}/> 

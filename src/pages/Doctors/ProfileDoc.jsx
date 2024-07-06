@@ -52,6 +52,7 @@ function ProfileDoc() {
               <p>Education</p>
               <p>Experience</p>
             </div>
+            
             <div className="answerdoc">
               <p>{doctorData.specialization}</p>
               <p>{doctorData.education}</p>

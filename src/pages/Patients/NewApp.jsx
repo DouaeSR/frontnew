@@ -2,11 +2,12 @@ import Layout from "../../components/Layout";
 import '../../css/NewApp.css';
 import { useState } from "react";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function NewApp() {
 
     const [name, setName] = useState('');
-    const [results, setResults] = useState([]);
+    const navigate = useNavigate();
     const [error, setError] = useState('');
   
     const handleSearch = async (e) => {
@@ -14,14 +15,13 @@ function NewApp() {
       setError('');
       try {
         const response = await axios.post('http://localhost:4000/api/patients/searchdoctor', { name });
-        setResults(response.data);
+        navigate('/patient/results', { state: { results: response.data } });
       } catch (err) {
         if (err.response && err.response.status === 404) {
           setError('Doctor not found');
         } else {
           setError('An error occurred');
         }
-        setResults([]);
       }
     };
   
@@ -50,11 +50,11 @@ function NewApp() {
         </button>
         </form>
         {error && <p>{error}</p>}
-      <ul>
+      {/* <ul>
         {results.map((doctor) => (
           <li key={doctor._id}>{doctor.firstName} {doctor.lastName} - {doctor.specialization}</li>
         ))}
-      </ul>
+      </ul> */}
       </div>
       <p>
         Can't find your doctor? <a href="/explore" className="explore-link">Explore more options</a>
