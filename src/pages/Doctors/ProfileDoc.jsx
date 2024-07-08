@@ -4,9 +4,11 @@ import Profilepic from "../../images/téléchargement.png";
 import { getInfo } from "../../services/global";
 import {useState, useEffect } from "react";
 import { getDoctorData } from "../../services/doctors";
+import { useNavigate } from 'react-router-dom';
 
 function ProfileDoc() {
   const [doctorData, setDoctorData] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     if (!getInfo() || getInfo().Type !== "Doctor") {
       window.location.href = "/doctor/login";
@@ -33,10 +35,10 @@ function ProfileDoc() {
             <h3>Contact Information</h3>
             <p>Phone: {doctorData.phone}</p>
             <p>Email: {doctorData.email}</p>
-            <p>Address: {doctorData.address}</p>
+            <p>Adress: {doctorData.address}</p>
           </div>
           <div className="editbutton">
-           <button>Edit profile</button> 
+          <button onClick={() => navigate('/doctor/editprofile')}>Edit profile</button> 
 
           </div>
 
@@ -69,11 +71,11 @@ function ProfileDoc() {
               <p>Friday</p>
             </div>
             <div className="hours">
-              <p>9 AM - 5 PM</p>
-              <p>9 AM - 5 PM</p>
-              <p>9 AM - 5 PM</p>
-              <p>9 AM - 5 PM</p>
-              <p>9 AM - 5 PM</p>
+              {/* <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p>
+                    <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p>
+                    <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p>
+                    <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p>
+                    <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p> */}
             </div>
           </div>
         </div>

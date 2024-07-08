@@ -12,7 +12,7 @@ function DoctorProfile() {
 
   const params = useParams();
 
-  const getDoctorData = async () => {
+  const getsingleData = async () => {
     const response = await axios.get(
       `http://localhost:4000/api/patients/getsingledoctor/${params.id}`
     );
@@ -27,7 +27,7 @@ function DoctorProfile() {
     }
 
     const getData = async () => {
-      const data = await getDoctorData();
+      const data = await getsingleData();
       //  console.log(data);
       setSingleData(data);
     };
@@ -89,11 +89,12 @@ function DoctorProfile() {
               <p>Friday</p>
             </div>
             <div className="hours">
-              <p>9 AM - 5 PM</p>
-              <p>9 AM - 5 PM</p>
-              <p>9 AM - 5 PM</p>
-              <p>9 AM - 5 PM</p>
-              <p>9 AM - 5 PM</p>
+                    {/* <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p>
+                    <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p>
+                    <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p>
+                    <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p>
+                    <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p> */}
+             
             </div>
           </div>
         </div>

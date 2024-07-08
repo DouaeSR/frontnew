@@ -43,7 +43,7 @@ function AdmDashboard() {
               </div>
             </Link>
 
-            <Link to='/admin/userslist' className="admdashbox">
+            <Link to='/admin/patientslist' className="admdashbox">
               <div
                 className="icon"
                 style={{ color: "#0077b6", fontSize: "24px" }}
@@ -54,7 +54,7 @@ function AdmDashboard() {
               <div className="text">
                 <p>New Users</p>
                 <p style={{ color: "#0077b6" }}>
-                  <strong>5+</strong>
+                  <strong>4+</strong>
                 </p>
                 <p>today</p>
               </div>
@@ -69,9 +69,9 @@ function AdmDashboard() {
               </div>
 
               <div className="text">
-                <p>Notifications</p>
+                <p>New Messages</p>
                 <p style={{ color: "#0077b6" }}>
-                  <strong>5+</strong>
+                  <strong>2+</strong>
                 </p>
                 <p>today</p>
               </div>

@@ -3,7 +3,7 @@ import "../../css/UsersList.css";
 import Layout from "../../components/Layout";
 import { getInfo } from "../../services/global";
 import { useState, useEffect } from "react";
-import { getDoctors } from "../../services/doctors";
+import { getDoctors, deleteDoctor } from "../../services/doctors";
 
 const UsersList = () => {
   const [doctors, setDoctors] = useState([]);
@@ -23,6 +23,14 @@ const UsersList = () => {
       fetchDoctors();
     }
   }, []);
+  const handleDelete = async (id) => {
+    try {
+      await deleteDoctor(id);
+      setDoctors(doctors.filter(doctor => doctor._id !== id));
+    } catch (error) {
+      console.error('Error deleting doctor:', error);
+    }
+  };
   return (getInfo().Type = "Admin" && (
     <Layout>
       <div className="users-list-container">
@@ -33,7 +41,7 @@ const UsersList = () => {
               <th>ID</th>
               <th>Name</th>
 
-              <th>Points</th>
+              
               <th>Email</th>
               <th>Action</th>
             </tr>
@@ -45,11 +53,11 @@ const UsersList = () => {
                 <td>
                   {doctor.firstName} {doctor.lastName}
                 </td>
-                <td>{doctor.points || "N/A"}</td>
+                
                 <td>{doctor.email}</td>
                 <td>
                   <div className="Actionbutton">
-                    <button>Delete</button>
+                  <button onClick={() => handleDelete(doctor._id)}>Delete</button>
                   </div>
                 </td>
               </tr>

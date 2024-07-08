@@ -2,13 +2,23 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
-    max-width: 400px;
+    max-width: 800px; /* Adjusted for wider layout */
 }
 
 h2 {
     text-align: center;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column,
+.right-column {
+    width: 48%; /* Adjusted for equal column widths */
 }
 
 .input-group {
@@ -23,22 +33,15 @@ h2 {
 .input-group input[type="text"],
 .input-group input[type="email"],
 .input-group input[type="password"],
-.input-group input[type="date"]
-
-{
-    width: 95%;
+.input-group select {
+    width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.input-group select{width: 95%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;}
-
 
 .form-button {
-    width: 95%;
+    width: 100%;
     padding: 10px;
     background-color: #5598a5;
     color: white;
@@ -49,7 +52,7 @@ h2 {
 }
 
 .form-button:hover {
-    background-color: #5598a5;
+    background-color: #447d86;
 }
 
 p {

@@ -27,11 +27,9 @@ function SearchResults() {
               <p>Speciality: {doctor.specialization}</p>
 
               <div className="doctordetails">
+               
                 <p>
-                  <i className="fa-solid fa-location-dot"></i> City Hospital
-                </p>
-                <p>
-                  <i className="fa-regular fa-clock"></i> 15 years
+                  <i className="fa-regular fa-clock"></i> {doctor.experience}
                 </p>
                 <p>
                   <i className="fa-solid fa-house-medical"></i> Mon-Fri, 9AM-5PM

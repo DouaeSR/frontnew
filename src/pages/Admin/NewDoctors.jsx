@@ -24,7 +24,7 @@ const NewDoctors = () => {
 
     getDoctors();
   }, []);
-  
+   
   const handleApprove = async (id) => {
     try {
       const updatedDoctor = await approveDoctor(id);

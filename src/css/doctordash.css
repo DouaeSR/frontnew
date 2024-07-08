@@ -18,8 +18,11 @@
   height: fit-content; /* Adjust height as needed */
   padding-left: 4%;
   align-content: center;
+  text-decoration: none;
 }
-
+.dashbox p {
+  color: black;
+}
 .text {
   display: flex;
   flex-direction: column;

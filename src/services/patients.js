@@ -43,3 +43,13 @@ export const updatePatientData = async (patientData) => {
   if (response.data && response.status === 200) {
     return response.data;}
 };
+
+export const deletePatient = async (id) => {
+  const response = await axios.delete(`http://localhost:4000/api/admin/delete/patient/${id}`, {
+    headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}` },
+  });
+  if (response.data && response.status === 200) {
+    return response.data;
+ 
+  }
+};

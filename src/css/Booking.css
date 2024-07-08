@@ -7,7 +7,7 @@
 }
 .sectionda {
     float: left;
-   margin-top: -180px;
+   margin-top: -85px;
     padding-right: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
@@ -24,12 +24,29 @@
 .profiled img,
 .profiled.rating {
     display: block;
-    margin: 20px 0; /* Add some margin for spacing */
+    margin: 20px 0; 
 }
 
 
 
-
+.availability-doctorsection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; 
+    text-align: center;
+  }
+  
+  .youravailability {
+   
+    padding: 20px;
+   
+  }
+  
+  .calendarfordoctor {
+    margin-top: 20px;
+  }
+  
 
 
 .profiled, .access-infob {
@@ -256,8 +273,7 @@ margin-right:0px ;}
 .spacer {
     flex-grow: 1;
   }
-  .unavailable-date {
-    background-color: red;
-    color: white;
-    pointer-events: none;
-  }
+  .react-calendar .react-calendar__tile--disabled {
+    background-color: red; /* Example styling */
+    color: white; /* Example styling */
+}

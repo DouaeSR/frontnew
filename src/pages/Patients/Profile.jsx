@@ -35,8 +35,8 @@ function Profile() {
   };
 
  
-  return (
-    getInfo().Type="Patient"  && (
+  return ( 
+    getInfo().Type="Patient"  && ( 
     <main>
       <div className="containersections">
         <div className="sectionpat">
@@ -47,7 +47,7 @@ function Profile() {
 
           <div className="access-info">
             <h3>Contact Information</h3>
-            <p>Phone: {patientData.phone}</p>
+            <p>Phon: {patientData.phone}</p>
             <p>Email: {patientData.email}</p>
           </div>
           <div className="editbutton">
@@ -59,13 +59,13 @@ function Profile() {
             <h3>Patient Informations</h3>
           </div>
 
-          <div className="details">
+          <div className="details"> 
             <div className="question">
               <p>First name</p>
               <p>Last name</p>
               <p>Age</p>
               <p>Gender</p>
-              <p>Cin</p>
+              
               <p>Blood type</p>
               <p>Allergies</p>
             </div>
@@ -74,7 +74,7 @@ function Profile() {
               <p>{patientData.lastName}</p>
               <p>{calculateAge(patientData.birthday)}</p>
               <p>{patientData.gender}</p>
-              <p>Cin</p>
+              
               <p>{patientData.bloodType}</p>
               <p>{patientData.allergies}</p>
             </div>

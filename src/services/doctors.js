@@ -53,3 +53,10 @@ export const getDoctors = async () => {
    
     }
   };
+  export const updateDoctorData = async (doctorData) => {
+    const response = await axios.put('http://localhost:4000/api/doctors/update', doctorData,{
+      headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}`},
+    });
+    if (response.data && response.status === 200) {
+      return response.data;}
+  };

@@ -10,82 +10,94 @@ import { getInfo } from "../../../services/global";
 import axios from "axios";
 
 
-    function Booking() {
-      const [singleData, setSingleData] = useState({}); 
-      const params = useParams()
-      const [appointmentCounts, setAppointmentCounts] = useState({});
-      const IdPatient = getInfo()?.user._id;
-      
+function Booking() {
+  const [singleData, setSingleData] = useState({});
+  const params = useParams();
+  const [disabledDates, setDisabledDates] = useState([]);
+  const IdPatient = getInfo()?.user._id;
 
-      const getDoctorData = async () => {
-        const response = await axios.get(`http://localhost:4000/api/patients/getsingledoctor/${params.id}`);
-        if (response.data && response.status === 200) {
-          return response.data;
-        
+  useEffect(() => {
+    if (!getInfo() || getInfo().Type !== "Patient") {
+      window.location.href = "/login";
+    }
+
+    const getDoctorData = async () => {
+      const response = await axios.get(`http://localhost:4000/api/patients/getsingledoctor/${params.id}`);
+      if (response.data && response.status === 200) {
+        setSingleData(response.data);
+      }
+    };
+
+    const fetchDisabledDates = async () => {
+      const IdDoctor = params.id;
+      // Simulez une opération asynchrone, par exemple une requête à une API
+      const dates = await axios.post(
+        "http://localhost:4000/api/appointments/getAppointmentsCountByDate",
+        {
+          IdDoctor,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${
+              JSON.parse(sessionStorage.getItem("info")).token
+            }`,
+          },
         }
+      );
+      setDisabledDates(dates.data.filter((item) => item.count>=4));
+      console.log(dates.data)
+    };
 
-      };
-      // const getAppointmentCounts = async () => {
-      //   const response = await axios.get(`http://localhost:4000/api/appointments/getAppointmentsCountByDate/${params.id}`);
-      //   if (response.data && response.status === 200) {
-      //     const counts = response.data.reduce((acc, { _id, count }) => {
-      //       acc[_id] = count;
-      //       return acc;
-      //     }, {});
-      //     setAppointmentCounts(counts);
-      //   }
-      // };
+    fetchDisabledDates();
 
-      useEffect(() => {
-        if (!getInfo() || getInfo().Type !== "Patient") {
-          window.location.href = "/login";
-        }
+    const fetchData = async () => {
+      await getDoctorData();
+      // await getAppointmentCounts();
+    };
 
-        const getData = async () => {
-          const data = await getDoctorData();
-          setSingleData(data);
-          // await getAppointmentCounts();
-        };
-    
-        getData();
-      },[]);
+    fetchData();
+  }, [params.id]);
 
-        const [date, setDate] = useState('');
-      
-        const handleDateChange = (newDate) => {
-          setDate(newDate);
-        };
+  const [date, setDate] = useState('');
 
-        const handleBookAppointment = async () => {
+  const handleDateChange = (newDate) => {
+    setDate(newDate);
+  };
 
-          try {
-            const response = await axios.post('http://localhost:4000/api/appointments/addAppointment', {
-              date: date,
-              IdDoctor: params.id,
-              IdPatient
-            }, {
-              headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}` }
-            });
-      
-            if (response.status === 201) {
-              alert(`Appointment booked for ${date.toDateString()}`);
-            } else {
-              alert("Can't book an appointment today");
-            }
-          } catch (error) {
-            if (error.response && error.response.data && error.response.data.message) {
-              alert(error.response.data.message);
-            } else {
-              console.error(error);
-              alert("Can't book an appointment today");
-            }
-          }
-        };
-        // const tileDisabled = ({ date }) => {
-        //   const dateString = date.toISOString().split('T')[0];
-        //   return appointmentCounts[dateString] >= 4;
-        // };
-          
+  const handleBookAppointment = async () => {
+    try {
+      const response = await axios.post('http://localhost:4000/api/appointments/addAppointment', {
+        date,
+        IdDoctor: params.id,
+        IdPatient
+      }, {
+        headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}` }
+      });
+
+      if (response.status === 201) {
+        alert(`Appointment booked for ${date.toDateString()}`);
+      } else {
+        alert("Can't book an appointment today");
+      }
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.message) {
+        alert(error.response.data.message);
+      } else {
+        console.error(error);
+        alert("Can't book an appointment today");
+      }
+    }
+  };
+
+  const isTileDisabled = ({ date }) => {   
+    return (disabledDates.some(
+      (disabledDate) =>
+        date.getFullYear() * 1 === disabledDate._id.year * 1 &&
+        date.getMonth() + 1 === disabledDate._id.month * 1 &&
+        date.getDate() * 1 === disabledDate._id.day * 1)||[0, 6].includes(date.getDay())
+    );
+  };
+
       
   return (
     getInfo().Type="Patient"  && (
@@ -103,7 +115,7 @@ import axios from "axios";
             <h3>Contact Information</h3>
             <p>Phone : {singleData.phone}</p>
             <p>Email : {singleData.email}</p>
-            <p>Address : {singleData.adress}</p>
+            <p>Address : {singleData.address}</p>
           </div>
         </div>
         <section className="appointment-section">
@@ -116,21 +128,14 @@ import axios from "axios";
           <div className="part part2">
             <h1>Select Your Date</h1>
             <div className="calendar">
-            <Calendar 
-              onChange={handleDateChange} 
-              value={date} 
-              minDate={new Date()}
-              // tileDisabled={tileDisabled}
-            />
+            <Calendar
+                onChange={handleDateChange}
+                value={date}
+                minDate={new Date()}
+                tileDisabled={isTileDisabled}
+              />
             </div>
-            <div className="availability">
-              <div className="indicator available"></div>
-              <span>Available</span>
-            </div>
-            <div className="availability">
-              <div className="indicator not-available"></div>
-              <span>Not Available</span>
-            </div>
+           
           </div>
           <div className="part part3">
             <button className="book-now-button" onClick={handleBookAppointment}>Book Now</button>

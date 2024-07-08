@@ -25,7 +25,7 @@ const Aside = () => {
                     <Link to='/doctor/profiledoc'>
                       <button className="profile-button-1">Profile</button>
                     </Link>
-                    <Link> <button className="profile-button-2">Notifications</button></Link>
+
                   </div>
                 </>
               </div>
@@ -36,6 +36,11 @@ const Aside = () => {
               <li>
                 <NavLink to="/doctor/dashboard">
                   <i className="fa-regular fa-user"></i> Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/doctor/availability">
+                  <i className="fa-regular fa-plus-square"></i> My availability
                 </NavLink>
               </li>
               <li>
@@ -62,7 +67,8 @@ const Aside = () => {
               <div className="profile-infoaside">
                 <div className="username">Admin</div>
                 <div className="profile-buttons">
-                <Link> <button className="profile-button-2">Notifications</button></Link>
+                
+                <Link to="/admin/messages"> <button className="profile-button-2">Messages</button></Link>
                 </div>
               </div>
               <hr />
@@ -102,7 +108,6 @@ const Aside = () => {
                     <Link to='/patient/profile'>
                       <button className="profile-button-1">Profile</button>
                     </Link>
-                    <Link> <button className="profile-button-2">Notifications</button></Link>
                    
                   </div>
                 </>
@@ -112,7 +117,7 @@ const Aside = () => {
             
             <ul className="sidebar-menuaside">
               <li>
-                <NavLink to="/patient/home">
+                <NavLink to="/patient/dashboard">
                   <i className="fa-regular fa-user"></i> Dashboard
                 </NavLink>
               </li>

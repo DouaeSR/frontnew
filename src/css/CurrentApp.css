@@ -59,3 +59,12 @@ h3{text-align: center;}
 .cancel-button:hover {
     background-color: #c82333;
 }
+
+.cancel-status{
+    
+    color:  #c82333;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}

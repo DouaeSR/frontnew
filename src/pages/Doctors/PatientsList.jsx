@@ -35,7 +35,7 @@ function PatientsList() {
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
-              <th>Address</th>
+              
               <th>Action</th>
             </tr>
           </thead>
@@ -45,7 +45,6 @@ function PatientsList() {
                   <td>{patient.firstName} {patient.lastName}</td>
                   <td>{patient.email}</td>
                   <td>{patient.phone}</td>
-                  <td>{patient.address}</td>
                   <td>
                     <div className="Detailsbutton">
                     <Link to={`/doctor/patientprofile/${patient._id}`}> <button>View Details</button></Link>

@@ -7,7 +7,7 @@ import '../../css/Appointments.css'
 import { getInfo } from "../../services/global";
 import { getApointmentsPatient } from "../../services/appointment";
 import Layout from "../../components/Layout";
-
+ 
 function Appointment() {  
   const toDay = new Date().toJSON().slice(0, 10); 
   let location = useLocation();
@@ -25,6 +25,7 @@ function Appointment() {
       console.log(data);
       setAppointementsData(data);
     };
+    
 
     getData();
     setPage(location.state ? location.state.page : "Current Appointment");

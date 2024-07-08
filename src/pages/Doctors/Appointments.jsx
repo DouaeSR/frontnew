@@ -6,8 +6,8 @@ import { useLocation } from "react-router-dom";
 import Layout from "../../components/Layout";
 import { getInfo } from "../../services/global";
 import { getApointmentsDoctor } from "../../services/appointment";
- 
- 
+  
+  
 function Appointment() { 
   const toDay = new Date().toJSON().slice(0, 10);
   let location = useLocation();
