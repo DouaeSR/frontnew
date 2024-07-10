@@ -46,7 +46,7 @@ function ProfileDoc() {
         </div>
         <div className="sectiondinfodoc">
           <div className="descriptiondoc">
-            <h3>Doctor Description</h3>
+            <h3>General information</h3>
           </div>
           <div className="detailsdoc">
             <div className="questiondoc">
@@ -70,13 +70,14 @@ function ProfileDoc() {
               <p>Thursday</p>
               <p>Friday</p>
             </div>
-            <div className="hours">
-              {/* <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p>
-                    <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p>
-                    <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p>
-                    <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p>
-                    <p>{doctorData.schedual.startTime} - {doctorData.schedual.stopTime} </p> */}
-            </div>
+            {doctorData.schedule &&<div className="hours">
+              <p>{doctorData.schedule.startTime} - {doctorData.schedule.stopTime} </p>
+                    <p>{doctorData.schedule.startTime} - {doctorData.schedule.stopTime} </p>
+                    <p>{doctorData.schedule.startTime} - {doctorData.schedule.stopTime} </p>
+                    <p>{doctorData.schedule.startTime} - {doctorData.schedule.stopTime} </p>
+                    <p>{doctorData.schedule.startTime} - {doctorData.schedule.stopTime} </p>
+            </div>}
+           
           </div>
         </div>
       </div>

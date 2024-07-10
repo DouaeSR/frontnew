@@ -60,3 +60,11 @@ export const getDoctors = async () => {
     if (response.data && response.status === 200) {
       return response.data;}
   };
+  export const getDoctorsBySpecialization = async (specialization)=> {
+    const response = await axios.get(`http://localhost:4000/api/patients/doctorsbyspecialy/${specialization}`, {
+      headers: { Authorization: `Bearer ${JSON.parse(sessionStorage.getItem('info')).token}` },
+    });
+    if (response.data && response.status === 200) {
+      return response.data;
+  }
+} 

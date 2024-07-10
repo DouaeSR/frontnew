@@ -24,8 +24,8 @@ function Home() {
           </div>
           <div className="aboutus">
               <h1>About us</h1>
-              <p>Dats in an online doctor appointment booking website where the patients can book appointments with doctors. The patients can book appointments anytime, anywhere with their desired doctors according to their problems.</p>
-              <p>After creating an account, the user can book a slot or they can even cancel an appointment. The user can be a patient or doctor, and both can receive emails from each other.</p>
+              <p>DABS is your go-to online platform for booking doctor appointments with ease and convenience. At Dabs, we empower patients to connect with the right doctors for their specific health concerns. </p>
+              <p>Once you create an account, you can effortlessly book or cancel appointments with your chosen healthcare providers, ensuring a seamless and personalized healthcare experience.</p>
               <div className="buttons">
                   <button><Link to="/patient/newapp">Make an appointment</Link></button>
                   <button><Link to="/login">Contact us</Link></button>
@@ -39,7 +39,7 @@ function Home() {
             <div className="box">
               <img src={Image1} alt=" smth"/>
               <h3>Search</h3>
-              <p>You can search for any doctor yor any specialty you want according to your problem and then choose your doctor</p>
+              <p>You can search for a specific doctor or explore our specializations before picking the doctor you like.</p>
           </div>
           <div className="box">
               <img src={Image2} alt="smth"/>

@@ -7,7 +7,7 @@
 }
 .sectionda {
     float: left;
-   margin-top: -85px;
+   margin-top: -60px;
     padding-right: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
@@ -52,9 +52,7 @@
 .profiled, .access-infob {
     border: 1px solid #ccc;
     border-radius: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
     margin-bottom: 20px; 
     
     width:100%;
@@ -202,7 +200,7 @@ margin-bottom: 35px;
 font-size: 25px;}
 
 .map-button, .book-now-button {
-    background-color: #007bff;
+    background-color: #5598a5;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -211,7 +209,7 @@ font-size: 25px;}
 }
 
 .map-button:hover, .book-now-button:hover {
-    background-color: #0056b3;
+    background-color: #356c8c;
 }
 
 
@@ -240,13 +238,7 @@ font-size: 25px;}
     border-radius: 50%;
 }
 
-.available {
-    background-color: green;
-}
 
-.not-available {
-    background-color: red;
-}
 .part3{position: absolute;
     bottom: 0;
     left: 50%;
@@ -273,7 +265,4 @@ margin-right:0px ;}
 .spacer {
     flex-grow: 1;
   }
-  .react-calendar .react-calendar__tile--disabled {
-    background-color: red; /* Example styling */
-    color: white; /* Example styling */
-}
+  

@@ -1,12 +1,27 @@
 import "../../css/patienthome.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
 import { getInfo } from "../../services/global";
 import { useState, useEffect } from "react";
 import { getApointmentsPatient } from "../../services/appointment";
- 
+
+const specializations = [
+  "Dermatology",
+  "Orthodontics",
+  "Psychiatry",
+  "Cardiology",
+  "Neurology",
+  "Pediatrics",
+  "Urology",
+  "Obstetrics",
+  "Otolaryngology",
+];
+
 function PatHome() {
   const [appointments, setAppointments] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (!getInfo() || getInfo().Type !== "Patient") {
       window.location.href = "/login";
@@ -28,6 +43,22 @@ function PatHome() {
       fetchAppointments();
     }
   }, []);
+
+  const handleLeftClick = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? specializations.length - 1 : prevIndex - 1));
+  };
+
+  const handleRightClick = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === specializations.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const handleSpecializationClick = (specialization) => {
+    navigate(`/patient/specialitylist/${specialization}`);
+  };
+
+  const displayedSpecializations = specializations.slice(currentIndex, currentIndex + 3).concat(
+    specializations.slice(0, Math.max(0, currentIndex + 3 - specializations.length))
+  );
 
   return (
     getInfo().Type === 'Patient' && (
@@ -66,19 +97,19 @@ function PatHome() {
             <h4 className="explore">Explore</h4>
             <p>Find experienced doctors across all specialties</p>
             <div className="specialties-container">
-              <div className="arrow">
+              <div className="arrow" onClick={handleLeftClick}>
                 <span>&#60;</span>
               </div>
-              <div className="imgwithtit">
-                <h4>Dermatology</h4>
-              </div>
-              <div className="imgwithtit">
-                <h4>Orthodontics</h4>
-              </div>
-              <div className="imgwithtit">
-                <h4>Psychiatry</h4>
-              </div>
-              <div className="arrow">
+              {displayedSpecializations.map((specialization, index) => (
+                <div
+                  className="imgwithtit"
+                  key={index}
+                  onClick={() => handleSpecializationClick(specialization)}
+                >
+                  <h4>{specialization}</h4>
+                </div>
+              ))}
+              <div className="arrow" onClick={handleRightClick}>
                 <span>&#62;</span>
               </div>
             </div>

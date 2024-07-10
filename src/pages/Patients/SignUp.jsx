@@ -13,6 +13,7 @@ function SignUp() {
     const [phone, setPhone] = useState('');
     const [bloodType, setBloodType] = useState('');
     const [allergies, setAllergies] = useState('');
+    
 
     const bloodTypes = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 

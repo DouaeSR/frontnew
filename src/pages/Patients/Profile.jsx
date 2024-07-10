@@ -45,7 +45,7 @@ function Profile() {
             <h3>{patientData.firstName}</h3>
           </div>
 
-          <div className="access-info">
+          <div className="access-info"> 
             <h3>Contact Information</h3>
             <p>Phon: {patientData.phone}</p>
             <p>Email: {patientData.email}</p>

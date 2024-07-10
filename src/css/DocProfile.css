@@ -18,9 +18,7 @@
 .access-infod {
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
   margin-bottom: 20px;
 
   width: 100%;
@@ -60,7 +58,7 @@
 
 .sectiond {
   float: left;
-  margin-top: -220px;
+  margin-top: -210px;
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 20px;

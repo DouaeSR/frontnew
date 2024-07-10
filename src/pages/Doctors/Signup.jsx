@@ -15,6 +15,7 @@ function SignUp() {
   const [experience, setExperience] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhoneNumber] = useState("");
+  
 
   const specializations = [
     "Dermatology",

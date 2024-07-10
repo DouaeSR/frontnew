@@ -17,7 +17,7 @@
 }
 .sectiondoc {
   float: left;
-  margin-top: -189px;
+  margin-top: -185px;
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 20px;
@@ -39,9 +39,7 @@
 .access-infodoc {
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
   margin-bottom: 20px;
 
   width: 100%;

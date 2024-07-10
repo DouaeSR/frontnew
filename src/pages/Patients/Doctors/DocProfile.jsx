@@ -19,7 +19,7 @@ function DoctorProfile() {
     if (response.data && response.status === 200) {
       return response.data;
     }
-  }; 
+  };
 
   useEffect(() => {
     if (!getInfo() || getInfo().Type !== "Patient") {
@@ -28,7 +28,7 @@ function DoctorProfile() {
 
     const getData = async () => {
       const data = await getsingleData();
-      //  console.log(data);
+      console.log(data);
       setSingleData(data);
     };
 
@@ -41,7 +41,9 @@ function DoctorProfile() {
         <div className="sectiond">
           <div className="profiled">
             <img src={Profilepic} alt="Doctor" />
-            <h3>{singleData.firstName} {singleData.lastName}</h3>
+            <h3>
+              {singleData.firstName} {singleData.lastName}
+            </h3>
             <p>{singleData.specialization}</p>
           </div>
 
@@ -49,7 +51,7 @@ function DoctorProfile() {
             <h3>Contact Information</h3>
             <p>Phone : {singleData.phone}</p>
             <p>Email : {singleData.email}</p>
-            <p>Address : {singleData.adress}</p>
+            <p>Address : {singleData.address}</p>
           </div>
         </div>
         <div className="sectiondinfod">
@@ -88,14 +90,30 @@ function DoctorProfile() {
               <p>Thursday</p>
               <p>Friday</p>
             </div>
-            <div className="hours">
-                    {/* <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p>
-                    <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p>
-                    <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p>
-                    <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p>
-                    <p>{singleData.schedual.startTime} - {singleData.schedual.stopTime} </p> */}
-             
-            </div>
+            {singleData.schedule && (
+              <div className="hours">
+                <p>
+                  {singleData.schedule.startTime} -{" "}
+                  {singleData.schedule.stopTime}{" "}
+                </p>
+                <p>
+                  {singleData.schedule.startTime} -{" "}
+                  {singleData.schedule.stopTime}{" "}
+                </p>
+                <p>
+                  {singleData.schedule.startTime} -{" "}
+                  {singleData.schedule.stopTime}{" "}
+                </p>
+                <p>
+                  {singleData.schedule.startTime} -{" "}
+                  {singleData.schedule.stopTime}{" "}
+                </p>
+                <p>
+                  {singleData.schedule.startTime} -{" "}
+                  {singleData.schedule.stopTime}{" "}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

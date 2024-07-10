@@ -34,6 +34,7 @@ import SearchResults from './pages/Patients/Results';
 import SelectTime from './pages/Patients/Doctors/SelectTime';
 import LogIn from './pages/Login'
 import Availability from'./pages/Doctors/Availability'
+import SpecialtyList from './pages/Patients/specialityresults'
 
 function App() {
   return (
@@ -65,7 +66,7 @@ function App() {
               <Route path="/doctor/editprofile" element={<EditProfileDoc />} />
               <Route path="/doctor/patientprofile/:id" element={<PatProfile/>}/>
               <Route path='/contactus' element={<ContactUs/>}/>
-             
+              <Route path='/patient/specialitylist/:specialization' element={<SpecialtyList/>}/>
               <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
               <Route path='/admin/messages' element={<Messages/>}/>
               <Route path='/admin/response/:id' element={<Response/>}/>
